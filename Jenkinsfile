@@ -5,15 +5,20 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Starting Build...'
+                echo '===== BUILD STARTED ====='
+
+                bat 'python --version'
+
                 bat 'python -m py_compile app.py'
-                echo 'Build successful: app.py compiled with no syntax errors'
+
+                echo '===== BUILD SUCCESSFUL ====='
+                echo 'app.py compiled successfully'
             }
         }
 
         stage('Notification') {
             steps {
-                echo 'Build completed successfully!'
+                echo '===== BUILD COMPLETED ====='
                 echo "Job Name: ${env.JOB_NAME}"
                 echo "Build Number: ${env.BUILD_NUMBER}"
                 echo "Build URL: ${env.BUILD_URL}"
