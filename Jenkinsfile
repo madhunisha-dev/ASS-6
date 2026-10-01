@@ -17,7 +17,7 @@ pipeline {
                 mail to: 'student@example.com',
                      cc: 'instructor@example.com',
                      subject: "Build Notification: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                     body: "The build for ${env.JOB_NAME} has completed.\n\nCheck it here: ${env.BUILD_U}
+                     body: "The build for ${env.JOB_NAME} has completed.\n\nCheck it here: ${env.BUILD_U}",
             }
         }
     }
